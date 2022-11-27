@@ -1,5 +1,5 @@
 from django.views.generic import ListView, DetailView
-from .models import Product
+from .models import Product, Category
 
 
 class ProductsList(ListView):
@@ -7,6 +7,13 @@ class ProductsList(ListView):
     ordering = 'name'
     template_name = 'products.html'
     context_object_name = 'products'
+
+
+class CategorysList(ListView):
+    model = Category
+    ordering = 'name'
+    template_name = 'categorys.html'
+    context_object_name = 'categorys'
 
 
 class ProductDetail(DetailView):
